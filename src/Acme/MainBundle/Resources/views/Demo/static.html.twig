@@ -1,0 +1,12 @@
+{% extends "::layout.html.twig" %}
+
+{% set title = cmfMainContent.title %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ title }}</h1>
+
+    {{ cmfMainContent.body|raw }}
+
+{% endblock %}
