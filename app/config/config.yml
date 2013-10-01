@@ -72,7 +72,7 @@ liip_doctrine_cache:
 cmf_core:
     persistence:
         phpcr:
-            enabled: true
+            use_sonata_admin: true
             basepath: /cms
     publish_workflow:
         enabled: false
@@ -88,9 +88,18 @@ cmf_content:
         phpcr: true
 
 cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 200
+            router.default: 100
+
     dynamic:
         persistence:
-            phpcr: true
+            phpcr:
+                enabled: true
+                route_basepath: /cms/routes
+        controllers_by_class:
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: cmf_content.controller:indexAction
 
 knp_menu:
     twig: true

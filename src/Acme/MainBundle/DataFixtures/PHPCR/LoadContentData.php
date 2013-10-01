@@ -31,7 +31,6 @@ class LoadContentData implements FixtureInterface
         $content->setTitle('Content 1');
         $content->setBody('Content 1');
         $content->addRoute($route);
-        $route->setContent($content);
 
         $content->setParent($contentRoot);
 
@@ -48,7 +47,6 @@ class LoadContentData implements FixtureInterface
         $content->setBody('Content 2');
         $content->setParent($contentRoot);
         $content->addRoute($route);
-        $route->setContent($content);
 
         $manager->persist($content);
 
