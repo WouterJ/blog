@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cc7089ddb70c1a38556a7c5a6719f34e",
+    "hash": "898b59be8ad1a59b4a8ec6f68472bdb3",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1021,6 +1021,45 @@
                 "parameters management"
             ],
             "time": "2013-09-03 08:29:03"
+        },
+        {
+            "name": "ircmaxell/password-compat",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/password_compat.git",
+                "reference": "1fc1521b5e9794ea77e4eca30717be9635f1d4f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/1fc1521b5e9794ea77e4eca30717be9635f1d4f4",
+                "reference": "1fc1521b5e9794ea77e4eca30717be9635f1d4f4",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/password.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@php.net",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+            "homepage": "https://github.com/ircmaxell/password_compat",
+            "keywords": [
+                "hashing",
+                "password"
+            ],
+            "time": "2013-04-30 19:58:08"
         },
         {
             "name": "jackalope/jackalope",
@@ -2275,12 +2314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "f618281bc73545ba5fda091e52f717a05a5942fd"
+                "reference": "fbb243c29ec0cf46e146f307e47509bbb2be80ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/f618281bc73545ba5fda091e52f717a05a5942fd",
-                "reference": "f618281bc73545ba5fda091e52f717a05a5942fd",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/fbb243c29ec0cf46e146f307e47509bbb2be80ff",
+                "reference": "fbb243c29ec0cf46e146f307e47509bbb2be80ff",
                 "shasum": ""
             },
             "require": {
@@ -2345,7 +2384,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2013-09-30 07:39:14"
+            "time": "2013-10-01 09:47:21"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3189,17 +3228,17 @@
         },
         {
             "name": "symfony-cmf/tree-browser-bundle",
-            "version": "dev-master",
+            "version": "1.0.0-RC1",
             "target-dir": "Symfony/Cmf/Bundle/TreeBrowserBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/TreeBrowserBundle.git",
-                "reference": "966257a50095082ba26e8841151782565731c6e5"
+                "reference": "96836a3eb7483c959355f747a60d1b834b133cf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/TreeBrowserBundle/zipball/966257a50095082ba26e8841151782565731c6e5",
-                "reference": "966257a50095082ba26e8841151782565731c6e5",
+                "url": "https://api.github.com/repos/symfony-cmf/TreeBrowserBundle/zipball/96836a3eb7483c959355f747a60d1b834b133cf5",
+                "reference": "96836a3eb7483c959355f747a60d1b834b133cf5",
                 "shasum": ""
             },
             "require": {
@@ -3242,7 +3281,7 @@
                 "phpcr",
                 "tree"
             ],
-            "time": "2013-09-27 14:26:00"
+            "time": "2013-09-11 14:06:38"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3419,12 +3458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "e0d3573454b3f01902856fc3211874f61b9212cc"
+                "reference": "b0687c8d8172b999fa52132d5a9b996046060fec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/e0d3573454b3f01902856fc3211874f61b9212cc",
-                "reference": "e0d3573454b3f01902856fc3211874f61b9212cc",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/b0687c8d8172b999fa52132d5a9b996046060fec",
+                "reference": "b0687c8d8172b999fa52132d5a9b996046060fec",
                 "shasum": ""
             },
             "require": {
@@ -3519,7 +3558,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-09-30 09:54:26"
+            "time": "2013-10-01 12:47:27"
         },
         {
             "name": "twig/extensions",

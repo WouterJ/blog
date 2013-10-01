@@ -11,6 +11,7 @@ class AppKernel extends Kernel
             // enable symfony-standard bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
@@ -20,6 +21,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+            new FOS\JsRoutingBundle\FosJsRoutingBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Liip\ImagineBundle\LiipImagineBundle(),
 
@@ -31,14 +33,22 @@ class AppKernel extends Kernel
 //            new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
 
             // and the sandbox bundle
             new Acme\MainBundle\AcmeMainBundle(),
+            new Wj\SecurityBundle\WjSecurityBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
         return $bundles;

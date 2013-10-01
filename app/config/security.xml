@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <config xmlns="http://symfony.com/schema/dic/security">
+
+        <firewall name="secured_area">
+            <form-login />
+            <anonymous />
+        </firewall>
+
+        <role id="ROLE_ADMIN">ROLE_USER</role>
+
+        <rule path="^/admin" role="ROLE_ADMIN" />
+
+        <provider name="simple_test_provider">
+            <memory>
+                <user name="admin" password="admin" roles="ROLE_ADMIN" />
+            </memory>
+        </provider>
+
+        <encoder class="Symfony\Component\Security\Core\User\User"
+            algorithm="plaintext"
+        />
+    </config>
+
+</container>

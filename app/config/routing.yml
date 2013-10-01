@@ -1,8 +1,39 @@
+wj_security:
+    resource: "@WjSecurityBundle/Resources/config/routing.xml"
+    prefix:   /
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+admin_panel:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+        
+sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+doctrine_phpcr_admin_bundle_odm_browser:
+    resource: "@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/tree.xml"
+
+admin_home:
+    path: /admin
+    defaults:
+        _controller: Framework:Redirect:urlRedirect
+        path: /admin/dashboard
+        permanent: true
+
+login:
+    pattern:   /login
+    defaults:  { _controller: WjSecurityBundle:Security:login }
+login_check:
+    pattern:   /login_check
 
 cmf_create_rest:
     resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"

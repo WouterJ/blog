@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services">
+
+    <import resource="parameters.yml" />
+    <import resource="security.xml" />
+
+    <!-- Framework Configuration -->
+    <config xmlns="http://symfony.com/schema/dic/symfony"
+        esi="null"
+        secret="%secret%"
+        form="true"
+        default-locale="%locale%"
+        session="null"
+        >
+
+        <translator fallback="en" />
+
+        <router resource="%kernel.root_dir%/config/routing.yml" />
+
+        <templating>
+            <engine>twig</engine>
+        </templating>
+    </config>
+
+    <!-- Twig Configuration -->
+    <config xmlns="http://symfony.com/schema/dic/twig"
+        debug="%kernel.debug%"
+        strict-variables="%kernel.debug%"
+    />
+
+    <!-- Assetic Configuration -->
+    <config xmlns="http://symfony.com/schema/dic/assetic"
+        debug="%kernel.debug%"
+        use-controller="false"
+    >
+        <!--
+        <bundle>CmfSimpleCmsbundle</bundle>
+        <bundle>CmfCreateBundle</bundle>
+        -->
+
+        <filter name="cssrewrite" />
+    </config>
+
+    <!-- Doctrine Configuration -->
+    <config xmlns="http://symfony.com/schema/dic/doctrine">
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
+        path:     %database_path%
+        charset:  UTF8
+
+# cmf configuration
+doctrine_phpcr:
+    # configure the PHPCR session
+    session:
+        backend: %phpcr_backend%
+        workspace: %phpcr_workspace%
+        username: %phpcr_user%
+        password: %phpcr_pass%
+    # enable the ODM layer
+    odm:
+        auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
+        locales:
+            en:
+                - de
+            de:
+                - en
+
+liip_doctrine_cache:
+    namespaces:
+        meta:
+            type: file_system
+        nodes:
+            type: file_system
+
+cmf_core:
+    persistence:
+        phpcr:
+            use_sonata_admin: true
+            basepath: /cms
+    publish_workflow:
+        enabled: false
+    multilang:
+        locales: %locales%
+
+cmf_create:
+    persistence:
+        phpcr:
+            enabled: true
+    editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
+
+cmf_content:
+    default_template: AcmeMainBundle:Demo:static.html.twig
+    persistence:
+        phpcr:
+            enabled: true
+
+cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 200
+            router.default: 100
+
+    dynamic:
+        persistence:
+            phpcr:
+                enabled: true
+                route_basepath: /cms/routes
+        controllers_by_class:
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: cmf_content.controller:indexAction
+
+sonata_block:
+    default_contexts: [cms]
+
+knp_menu:
+    twig: true
+
+lunetics_locale:
+    strict_mode: true
+    guessing_order:
+        - cookie
+        - router
+        - browser
+    allowed_locales: %locales%
+</container>
