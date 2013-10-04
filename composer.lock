@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "898b59be8ad1a59b4a8ec6f68472bdb3",
+    "hash": "1c630164520dc2d9f0bf0036393b01de",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2450,24 +2450,24 @@
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
-            "version": "dev-master",
+            "version": "1.0.0-beta5",
             "target-dir": "Sonata/DoctrinePHPCRAdminBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "b6a1e79b1d3666ce060794830341e0ceb994a77b"
+                "reference": "2622ef22b153c8c96231d99c2a5cb436247dcfbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/b6a1e79b1d3666ce060794830341e0ceb994a77b",
-                "reference": "b6a1e79b1d3666ce060794830341e0ceb994a77b",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/2622ef22b153c8c96231d99c2a5cb436247dcfbc",
+                "reference": "2622ef22b153c8c96231d99c2a5cb436247dcfbc",
                 "shasum": ""
             },
             "require": {
                 "doctrine/phpcr-bundle": "1.0.*",
                 "doctrine/phpcr-odm": "1.0.*",
                 "php": ">=5.3.3",
-                "sonata-project/admin-bundle": "~2.2.5",
+                "sonata-project/admin-bundle": "~2.2.3",
                 "symfony-cmf/tree-browser-bundle": "1.0.*",
                 "symfony/framework-bundle": "~2.2",
                 "symfony/property-access": "~2.2"
@@ -2508,7 +2508,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2013-09-27 12:01:14"
+            "time": "2013-09-09 12:51:58"
         },
         {
             "name": "sonata-project/exporter",
@@ -3766,9 +3766,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "sonata-project/doctrine-phpcr-admin-bundle": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": {
         "php": ">=5.3.3"
     },

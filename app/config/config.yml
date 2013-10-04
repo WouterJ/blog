@@ -128,21 +128,53 @@ sonata_doctrine_phpcr_admin:
         Doctrine\ODM\PHPCR\Document\Generic:
             valid_children:
                 - all
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
-            valid_children:
-                - all
         Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent:
             valid_children:
-                - all
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
+        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: ~
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:
             valid_children: []
+        Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
+        Symfony\Cmf\Bundle\BlogBundle\Document\Blog:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlogBundle\Document\Post
+        Symfony\Cmf\Bundle\BlogBundle\Document\Post:
+            valid_children: []
 
 knp_menu:
     twig: true
